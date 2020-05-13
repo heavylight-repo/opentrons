@@ -10,7 +10,7 @@ import {
 
 import type { RobotApiV2ErrorResponseBody } from '../../robot-api/types'
 
-export const mockSessionData: Types.Session = {
+export const mockSessionAttributes: Types.Session = {
   sessionType: 'calibrationCheck',
   details: { someData: 5 },
 }
@@ -20,7 +20,7 @@ export const mockSessionCommand: Types.SessionCommand = {
   data: { someData: 32 },
 }
 
-export const mockSessionCommandData: Types.SessionCommand = {
+export const mockSessionCommandAttributes: Types.SessionCommand = {
   command: '4321',
   status: 'accepted',
   data: {},
@@ -30,7 +30,7 @@ export const mockSessionResponse: Types.SessionResponse = {
   data: {
     id: '1234',
     type: 'Session',
-    attributes: mockSessionData,
+    attributes: mockSessionAttributes,
   },
 }
 
@@ -38,7 +38,7 @@ export const mockSessionCommandResponse: Types.SessionCommandResponse = {
   data: {
     id: '4321',
     type: 'SessionCommand',
-    attributes: mockSessionCommandData,
+    attributes: mockSessionCommandAttributes,
   },
   meta: {
     sessionType: 'calibrationCheck',

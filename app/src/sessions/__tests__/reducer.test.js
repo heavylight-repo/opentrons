@@ -1,6 +1,6 @@
 // @flow
 import * as Fixtures from '../__fixtures__'
-import { robotSessionReducer } from '../reducer'
+import { sessionReducer } from '../reducer'
 
 import type { Action } from '../../types'
 import type { SessionState } from '../types'
@@ -123,7 +123,7 @@ const SPECS: Array<ReducerSpec> = [
     state: {
       'eggplant-parm': {
         robotSessions: {
-          '1234': Fixtures.mockSessionData,
+          '1234': Fixtures.mockSessionAttributes,
         },
       },
     },
@@ -149,15 +149,15 @@ const SPECS: Array<ReducerSpec> = [
     state: {
       'eggplant-parm': {
         robotSessions: {
-          '4321': Fixtures.mockSessionData,
-          '1234': Fixtures.mockSessionData,
+          '4321': Fixtures.mockSessionAttributes,
+          '1234': Fixtures.mockSessionAttributes,
         },
       },
     },
     expected: {
       'eggplant-parm': {
         robotSessions: {
-          '4321': Fixtures.mockSessionData,
+          '4321': Fixtures.mockSessionAttributes,
           '1234': Fixtures.mockSessionCommandResponse.meta,
         },
       },
@@ -176,15 +176,15 @@ const SPECS: Array<ReducerSpec> = [
     state: {
       'eggplant-parm': {
         robotSessions: {
-          '4321': Fixtures.mockSessionData,
-          '1234': Fixtures.mockSessionData,
+          '4321': Fixtures.mockSessionAttributes,
+          '1234': Fixtures.mockSessionAttributes,
         },
       },
     },
     expected: {
       'eggplant-parm': {
         robotSessions: {
-          '4321': Fixtures.mockSessionData,
+          '4321': Fixtures.mockSessionAttributes,
         },
       },
     },
@@ -194,6 +194,6 @@ const SPECS: Array<ReducerSpec> = [
 describe('robotSessionReducer', () => {
   SPECS.forEach(spec => {
     const { name, state, action, expected } = spec
-    it(name, () => expect(robotSessionReducer(state, action)).toEqual(expected))
+    it(name, () => expect(sessionReducer(state, action)).toEqual(expected))
   })
 })
