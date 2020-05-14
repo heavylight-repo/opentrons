@@ -95,5 +95,5 @@ CommandRequest = RequestModel[
     RequestDataModel[SessionCommand]
 ]
 CommandResponse = ResponseModel[
-    ResponseDataModel[SessionCommand], Session
+    ResponseDataModel[SessionCommand], dict
 ]
