@@ -40,13 +40,6 @@ export const mockSessionCommandResponse: Types.SessionCommandResponse = {
     type: 'SessionCommand',
     attributes: mockSessionCommandAttributes,
   },
-  meta: {
-    sessionType: 'calibrationCheck',
-    details: {
-      someData: 15,
-      someOtherData: 'hi',
-    },
-  },
 }
 
 export const {

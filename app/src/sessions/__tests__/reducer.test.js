@@ -110,60 +110,6 @@ const SPECS: Array<ReducerSpec> = [
     },
   },
   {
-    name: 'handles sessions:CREATE_SESSION_COMMAND_SUCCESS',
-    action: {
-      type: 'sessions:CREATE_SESSION_COMMAND_SUCCESS',
-      payload: {
-        robotName: 'eggplant-parm',
-        sessionId: '1234',
-        ...Fixtures.mockSessionCommandResponse,
-      },
-      meta: {},
-    },
-    state: {
-      'eggplant-parm': {
-        robotSessions: {
-          '1234': Fixtures.mockSessionAttributes,
-        },
-      },
-    },
-    expected: {
-      'eggplant-parm': {
-        robotSessions: {
-          '1234': Fixtures.mockSessionCommandResponse.meta,
-        },
-      },
-    },
-  },
-  {
-    name: 'handles sessions:CREATE_SESSION_COMMAND_SUCCESS with existing',
-    action: {
-      type: 'sessions:CREATE_SESSION_COMMAND_SUCCESS',
-      payload: {
-        robotName: 'eggplant-parm',
-        sessionId: '1234',
-        ...Fixtures.mockSessionCommandResponse,
-      },
-      meta: {},
-    },
-    state: {
-      'eggplant-parm': {
-        robotSessions: {
-          '4321': Fixtures.mockSessionAttributes,
-          '1234': Fixtures.mockSessionAttributes,
-        },
-      },
-    },
-    expected: {
-      'eggplant-parm': {
-        robotSessions: {
-          '4321': Fixtures.mockSessionAttributes,
-          '1234': Fixtures.mockSessionCommandResponse.meta,
-        },
-      },
-    },
-  },
-  {
     name: 'handles sessions:DELETE_SESSION_SUCCESS',
     action: {
       type: 'sessions:DELETE_SESSION_SUCCESS',
